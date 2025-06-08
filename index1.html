@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholar Sphere - Your Personalized Study Buddy</title>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="main.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+    <!-- ECharts Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+</head>
+
+<body>
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white border-r border-gray-200 flex flex-col">
+            <!-- Logo -->
+            <div class="p-4 border-b border-gray-200">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white mr-2">
+                        <i class="ri-graduation-cap-fill ri-lg"></i>
+                    </div>
+                    <h1 class="text-xl font-['Pacifico'] text-gray-800">Scholar Sphere</h1>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 overflow-y-auto custom-scrollbar">
+                <div class="px-4 pt-5 pb-2">
+                    <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">Main</p>
+                </div>
+                <div class="px-2">
+                    <a href="#"
+                        class="flex items-center px-3 py-2 text-sm font-medium rounded-md bg-primary text-white">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-dashboard-line"></i>
+                        </div>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="mycourses.html"
+                        class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-book-open-line"></i>
+                        </div>
+                        <span>My Courses</span>
+                    </a>
+                    <a href="schedule.html"
+                        class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span>Schedule</span>
+                    </a>
+                    <a href="assignments.html"
+                        class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-task-line"></i>
+                        </div>
+                        <span>Assignments</span>
+                    </a>
+                    <a href="resources.html"
+                        class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-file-list-3-line"></i>
+                        </div>
+                        <span>Resources</span>
+                    </a>
+                </div>
+
+                <div class="px-4 pt-5 pb-2">
+                    <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">MY Progress</p>
+                </div>
+                <div class="px-2">
+                    <a href="analytics.html"
+                        class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-line-chart-line"></i>
+                        </div>
+                        <span>Analytics</span>
+                    </a>
+                    <a href="achievements.html"
+                        class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-medal-line"></i>
+                        </div>
+                        <span>Achievements</span>
+                    </a>
+                    <a href="leaderboard.html"
+                        class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-trophy-line"></i>
+                        </div>
+                        <span>Leaderboard</span>
+                    </a>
+                </div>
+
+                <div class="px-4 pt-5 pb-2">
+                    <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">Account</p>
+                </div>
+                <div class="px-2">
+                    <a href="profile.html"
+                        class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-user-settings-line"></i>
+                        </div>
+                        <span>Profile</span>
+                    </a>
+                    <a href="support.html"
+                        class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1">
+                        <div class="w-6 h-6 flex items-center justify-center mr-2">
+                            <i class="ri-customer-service-2-line"></i>
+                        </div>
+                        <span>Support</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Membership Status -->
+            <div class="p-4 border-t border-gray-200">
+                <div class="bg-gray-50 rounded-lg p-3">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-medium text-gray-700">Basic Plan</span>
+                        <span class="text-xs font-medium px-2 py-1 bg-blue-100 text-blue-800 rounded-full">Active</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5">
+                        <div class="bg-primary h-1.5 rounded-full" style="width: 45%"></div>
+                    </div>
+                    <div class="mt-2 flex justify-between items-center">
+                        <span class="text-xs text-gray-500">45 days left</span>
+                        <button
+                            class="text-xs font-medium text-primary hover:text-primary-dark !rounded-button">Upgrade</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Navigation -->
+            <header class="bg-white border-b border-gray-200">
+                <div class="flex items-center justify-between px-6 py-3">
+                    <!-- Search -->
+                    <div class="w-1/3">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <i class="ri-search-line text-gray-400"></i>
+                            </div>
+                            <input type="text"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
+                                placeholder="Search for courses, resources...">
+                        </div>
+                    </div>
+
+                    <!-- Right Navigation -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Theme Toggle -->
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 flex items-center justify-center text-gray-500 mr-1">
+                                <i class="ri-sun-line"></i>
+                            </div>
+                            <input type="checkbox" id="theme-toggle" class="toggle">
+                            <label for="theme-toggle" class="toggle-label"></label>
+                            <div class="w-6 h-6 flex items-center justify-center text-gray-500 ml-1">
+                                <i class="ri-moon-line"></i>
+                            </div>
+                        </div>
+
+                        <!-- Notifications -->
+                        <button class="relative p-1 text-gray-700 hover:bg-gray-100 rounded-full !rounded-button">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-notification-3-line"></i>
+                            </div>
+                            <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500"></span>
+                        </button>
+
+                        <!-- Messages -->
+                        <button class="p-1 text-gray-700 hover:bg-gray-100 rounded-full !rounded-button">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-message-3-line"></i>
+                            </div>
+                        </button>
+
+                        <!-- Profile Dropdown -->
+                        <div class="relative">
+                            <button class="flex items-center space-x-2 !rounded-button">
+                                <img class="h-8 w-8 rounded-full object-cover"
+                                    src="https://readdy.ai/api/search-image?query=professional%20portrait%20photo%20of%20a%20young%20female%20student%20with%20shoulder-length%20brown%20hair%2C%20friendly%20smile%2C%20natural%20makeup%2C%20wearing%20casual%20smart%20attire%2C%20neutral%20background%2C%20high%20quality%20professional%20headshot&width=200&height=200&seq=avatar1&orientation=squarish"
+                                    alt="User avatar">
+                                <div class="hidden md:block text-left">
+                                    <p class="text-sm font-medium text-gray-700">Emily Johnson</p>
+                                    <p class="text-xs text-gray-500">12th Grade</p>
+                                </div>
+                                <div class="w-5 h-5 flex items-center justify-center text-gray-500">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 overflow-y-auto bg-gray-50 custom-scrollbar p-6">
+                <!-- Welcome Section -->
+                <div class="mb-6">
+                    <h1 class="text-2xl font-bold text-gray-900">Good afternoon, Emily!</h1>
+                    <p class="text-gray-600">Here's your study overview for Wednesday, May 14, 2025</p>
+                </div>
+
+                <!-- Stats Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <!-- Study Time -->
+                    <div class="bg-white rounded-lg shadow-sm p-5">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Total Study Time</p>
+                                <h3 class="text-2xl font-bold text-gray-900 mt-1">24h 45m</h3>
+                                <p class="text-xs text-green-600 mt-1 flex items-center">
+                                    <i class="ri-arrow-up-line mr-1"></i> 12% from last week
+                                </p>
+                            </div>
+                            <div
+                                class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary">
+                                <i class="ri-time-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Completion Rate -->
+                    <div class="bg-white rounded-lg shadow-sm p-5">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Completion Rate</p>
+                                <h3 class="text-2xl font-bold text-gray-900 mt-1">78%</h3>
+                                <p class="text-xs text-green-600 mt-1 flex items-center">
+                                    <i class="ri-arrow-up-line mr-1"></i> 5% from last week
+                                </p>
+                            </div>
+                            <div
+                                class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full text-green-600">
+                                <i class="ri-checkbox-circle-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Current Streak -->
+                    <div class="bg-white rounded-lg shadow-sm p-5">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Current Streak</p>
+                                <h3 class="text-2xl font-bold text-gray-900 mt-1">14 days</h3>
+                                <p class="text-xs text-gray-500 mt-1">Keep it up!</p>
+                            </div>
+                            <div
+                                class="w-10 h-10 flex items-center justify-center bg-yellow-100 rounded-full text-yellow-600">
+                                <i class="ri-fire-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Deadlines -->
+                    <div class="bg-white rounded-lg shadow-sm p-5">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Upcoming Deadlines</p>
+                                <h3 class="text-2xl font-bold text-gray-900 mt-1">3</h3>
+                                <p class="text-xs text-red-600 mt-1 flex items-center">
+                                    <i class="ri-alarm-warning-line mr-1"></i> 1 due tomorrow
+                                </p>
+                            </div>
+                            <div
+                                class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full text-red-600">
+                                <i class="ri-calendar-event-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Left Column -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <!-- Progress Charts -->
+                        <div class="bg-white rounded-lg shadow-sm p-5">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold text-gray-900">Subject Progress</h2>
+                                <div class="flex space-x-2">
+                                    <button
+                                        class="px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 !rounded-button whitespace-nowrap">Weekly</button>
+                                    <button
+                                        class="px-3 py-1 text-sm font-medium text-gray-500 hover:bg-gray-100 rounded-md !rounded-button whitespace-nowrap">Monthly</button>
+                                    <button
+                                        class="px-3 py-1 text-sm font-medium text-gray-500 hover:bg-gray-100 rounded-md !rounded-button whitespace-nowrap">All
+                                        Time</button>
+                                </div>
+                            </div>
+                            <div id="progress-chart" class="w-full h-64"></div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="bg-white rounded-lg shadow-sm p-5">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold text-gray-900">Recent Activity</h2>
+                                <button
+                                    class="text-sm font-medium text-primary hover:text-primary-dark !rounded-button whitespace-nowrap">View
+                                    All</button>
+                            </div>
+                            <div class="space-y-4">
+                                <!-- Activity Item 1 -->
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3 flex-shrink-0">
+                                        <i class="ri-book-read-line"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="text-sm font-medium text-gray-900">Completed Physics Chapter 7
+                                                </p>
+                                                <p class="text-xs text-gray-500">Electromagnetism & Applications</p>
+                                            </div>
+                                            <span class="text-xs text-gray-500">2h ago</span>
+                                        </div>
+                                        <div class="mt-1 flex items-center">
+                                            <div class="w-full bg-gray-200 rounded-full h-1.5 mr-2">
+                                                <div class="bg-primary h-1.5 rounded-full" style="width: 100%"></div>
+                                            </div>
+                                            <span class="text-xs font-medium text-gray-700">100%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Activity Item 2 -->
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full text-green-600 mr-3 flex-shrink-0">
+                                        <i class="ri-file-list-3-line"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="text-sm font-medium text-gray-900">Submitted Math Assignment
+                                                </p>
+                                                <p class="text-xs text-gray-500">Calculus: Integration Techniques</p>
+                                            </div>
+                                            <span class="text-xs text-gray-500">Yesterday</span>
+                                        </div>
+                                        <div class="mt-1">
+                                            <span
+                                                class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                                                <i class="ri-check-line mr-1"></i> Submitted on time
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Activity Item 3 -->
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-purple-100 rounded-full text-purple-600 mr-3 flex-shrink-0">
+                                        <i class="ri-test-tube-line"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="text-sm font-medium text-gray-900">Scored 92% on Chemistry
+                                                    Quiz</p>
+                                                <p class="text-xs text-gray-500">Organic Chemistry: Functional Groups
+                                                </p>
+                                            </div>
+                                            <span class="text-xs text-gray-500">2 days ago</span>
+                                        </div>
+                                        <div class="mt-1 flex items-center">
+                                            <div class="w-full bg-gray-200 rounded-full h-1.5 mr-2">
+                                                <div class="bg-purple-500 h-1.5 rounded-full" style="width: 92%"></div>
+                                            </div>
+                                            <span class="text-xs font-medium text-gray-700">92%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Activity Item 4 -->
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-yellow-100 rounded-full text-yellow-600 mr-3 flex-shrink-0">
+                                        <i class="ri-book-mark-line"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="text-sm font-medium text-gray-900">Started Literature Analysis
+                                                </p>
+                                                <p class="text-xs text-gray-500">Shakespeare's Macbeth: Character Study
+                                                </p>
+                                            </div>
+                                            <span class="text-xs text-gray-500">3 days ago</span>
+                                        </div>
+                                        <div class="mt-1 flex items-center">
+                                            <div class="w-full bg-gray-200 rounded-full h-1.5 mr-2">
+                                                <div class="bg-yellow-500 h-1.5 rounded-full" style="width: 35%"></div>
+                                            </div>
+                                            <span class="text-xs font-medium text-gray-700">35%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Upcoming Assignments -->
+                        <div class="bg-white rounded-lg shadow-sm p-5">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold text-gray-900">Upcoming Assignments</h2>
+                                <button
+                                    class="text-sm font-medium text-primary hover:text-primary-dark !rounded-button whitespace-nowrap">View
+                                    All</button>
+                            </div>
+                            <div class="space-y-4">
+                                <!-- Assignment 1 -->
+                                <div class="flex items-center p-3 bg-red-50 rounded-lg border border-red-100">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full text-red-600 mr-3 flex-shrink-0">
+                                        <i class="ri-file-text-line"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                                            <div>
+                                                <p class="text-sm font-medium text-gray-900">Biology Research Paper</p>
+                                                <p class="text-xs text-gray-600">Genetic Engineering Ethics</p>
+                                            </div>
+                                            <div class="mt-1 sm:mt-0">
+                                                <span
+                                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">
+                                                    <i class="ri-time-line mr-1"></i> Due Tomorrow
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="ml-2 p-1 text-gray-500 hover:text-gray-700 !rounded-button">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-more-2-fill"></i>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <!-- Assignment 2 -->
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg border border-gray-100">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-orange-100 rounded-full text-orange-600 mr-3 flex-shrink-0">
+                                        <i class="ri-presentation-line"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                                            <div>
+                                                <p class="text-sm font-medium text-gray-900">History Presentation</p>
+                                                <p class="text-xs text-gray-600">Industrial Revolution Impact</p>
+                                            </div>
+                                            <div class="mt-1 sm:mt-0">
+                                                <span
+                                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-800">
+                                                    <i class="ri-calendar-line mr-1"></i> Due in 3 days
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="ml-2 p-1 text-gray-500 hover:text-gray-700 !rounded-button">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-more-2-fill"></i>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <!-- Assignment 3 -->
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg border border-gray-100">
+                                    <div
+                                        class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-blue-600 mr-3 flex-shrink-0">
+                                        <i class="ri-calculator-line"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                                            <div>
+                                                <p class="text-sm font-medium text-gray-900">Math Problem Set</p>
+                                                <p class="text-xs text-gray-600">Differential Equations</p>
+                                            </div>
+                                            <div class="mt-1 sm:mt-0">
+                                                <span
+                                                    class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">
+                                                    <i class="ri-calendar-line mr-1"></i> Due next week
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="ml-2 p-1 text-gray-500 hover:text-gray-700 !rounded-button">
+                                        <div class="w-6 h-6 flex items-center justify-center">
+                                            <i class="ri-more-2-fill"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="space-y-6">
+                        <!-- AI Study Buddy -->
+                        <div class="bg-white rounded-lg shadow-sm p-5">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold text-gray-900">AI Study Buddy</h2>
+                                <button class="p-1 text-gray-500 hover:text-gray-700 rounded-full !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-settings-4-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                <div class="flex items-start space-x-3">
+                                    <div
+                                        class="w-8 h-8 flex items-center justify-center bg-primary rounded-full text-white flex-shrink-0">
+                                        <i class="ri-robot-line"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-700">Hi Emily! Based on your recent activity, I
+                                            suggest focusing on your Biology research paper due tomorrow. Need help with
+                                            that?</p>
+                                        <p class="text-xs text-gray-500 mt-1">2 minutes ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <input type="text"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-4 pr-10 py-2.5"
+                                    placeholder="Ask your study buddy...">
+                                <button
+                                    class="absolute right-2 top-1/2 transform -translate-y-1/2 text-primary !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-send-plane-fill"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <button
+                                    class="px-3 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 !rounded-button whitespace-nowrap">Help
+                                    with biology paper</button>
+                                <button
+                                    class="px-3 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 !rounded-button whitespace-nowrap">Study
+                                    plan for today</button>
+                                <button
+                                    class="px-3 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 !rounded-button whitespace-nowrap">Explain
+                                    calculus concept</button>
+                            </div>
+                        </div>
+
+                        <!-- Calendar -->
+                        <div class="bg-white rounded-lg shadow-sm p-5">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold text-gray-900">Calendar</h2>
+                                <button
+                                    class="text-sm font-medium text-primary hover:text-primary-dark !rounded-button whitespace-nowrap">View
+                                    Full</button>
+                            </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <button class="p-1 text-gray-500 hover:text-gray-700 !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-arrow-left-s-line"></i>
+                                    </div>
+                                </button>
+                                <h3 class="text-sm font-medium text-gray-700">May 2025</h3>
+                                <button class="p-1 text-gray-500 hover:text-gray-700 !rounded-button">
+                                    <div class="w-6 h-6 flex items-center justify-center">
+                                        <i class="ri-arrow-right-s-line"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-7 gap-1 text-center mb-2">
+                                <span class="text-xs font-medium text-gray-500">S</span>
+                                <span class="text-xs font-medium text-gray-500">M</span>
+                                <span class="text-xs font-medium text-gray-500">T</span>
+                                <span class="text-xs font-medium text-gray-500">W</span>
+                                <span class="text-xs font-medium text-gray-500">T</span>
+                                <span class="text-xs font-medium text-gray-500">F</span>
+                                <span class="text-xs font-medium text-gray-500">S</span>
+                            </div>
+                            <div class="grid grid-cols-7 gap-1 text-center">
+                                <span class="text-xs text-gray-400 p-2">27</span>
+                                <span class="text-xs text-gray-400 p-2">28</span>
+                                <span class="text-xs text-gray-400 p-2">29</span>
+                                <span class="text-xs text-gray-400 p-2">30</span>
+                                <span class="text-xs text-gray-700 p-2">1</span>
+                                <span class="text-xs text-gray-700 p-2">2</span>
+                                <span class="text-xs text-gray-700 p-2">3</span>
+                                <span class="text-xs text-gray-700 p-2">4</span>
+                                <span class="text-xs text-gray-700 p-2">5</span>
+                                <span class="text-xs text-gray-700 p-2">6</span>
+                                <span class="text-xs text-gray-700 p-2">7</span>
+                                <span class="text-xs text-gray-700 p-2">8</span>
+                                <span class="text-xs text-gray-700 p-2">9</span>
+                                <span class="text-xs text-gray-700 p-2">10</span>
+                                <span class="text-xs text-gray-700 p-2">11</span>
+                                <span class="text-xs text-gray-700 p-2">12</span>
+                                <span class="text-xs text-gray-700 p-2">13</span>
+                                <span class="text-xs text-gray-700 p-2 rounded-full bg-primary text-white">14</span>
+                                <span class="text-xs text-gray-700 p-2 relative">
+                                    15
+                                    <span
+                                        class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-red-500 rounded-full"></span>
+                                </span>
+                                <span class="text-xs text-gray-700 p-2">16</span>
+                                <span class="text-xs text-gray-700 p-2">17</span>
+                                <span class="text-xs text-gray-700 p-2">18</span>
+                                <span class="text-xs text-gray-700 p-2">19</span>
+                                <span class="text-xs text-gray-700 p-2">20</span>
+                                <span class="text-xs text-gray-700 p-2 relative">
+                                    21
+                                    <span
+                                        class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-500 rounded-full"></span>
+                                </span>
+                                <span class="text-xs text-gray-700 p-2">22</span>
+                                <span class="text-xs text-gray-700 p-2">23</span>
+                                <span class="text-xs text-gray-700 p-2">24</span>
+                                <span class="text-xs text-gray-700 p-2">25</span>
+                                <span class="text-xs text-gray-700 p-2">26</span>
+                                <span class="text-xs text-gray-700 p-2">27</span>
+                                <span class="text-xs text-gray-700 p-2">28</span>
+                                <span class="text-xs text-gray-700 p-2">29</span>
+                                <span class="text-xs text-gray-700 p-2">30</span>
+                                <span class="text-xs text-gray-700 p-2">31</span>
+                                <span class="text-xs text-gray-400 p-2">1</span>
+                                <span class="text-xs text-gray-400 p-2">2</span>
+                                <span class="text-xs text-gray-400 p-2">3</span>
+                                <span class="text-xs text-gray-400 p-2">4</span>
+                                <span class="text-xs text-gray-400 p-2">5</span>
+                                <span class="text-xs text-gray-400 p-2">6</span>
+                                <span class="text-xs text-gray-400 p-2">7</span>
+                            </div>
+
+                            <div class="mt-4 space-y-2">
+                                <h4 class="text-xs font-medium text-gray-700">Upcoming Events</h4>
+                                <div class="flex items-center p-2 bg-gray-50 rounded-md">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+                                    <div>
+                                        <p class="text-xs font-medium text-gray-900">Biology Research Paper Due</p>
+                                        <p class="text-xs text-gray-500">May 15, 11:59 PM</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center p-2 bg-gray-50 rounded-md">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                                    <div>
+                                        <p class="text-xs font-medium text-gray-900">Chemistry Lab Session</p>
+                                        <p class="text-xs text-gray-500">May 21, 2:30 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Leaderboard -->
+                        <div class="bg-white rounded-lg shadow-sm p-5">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold text-gray-900">Class Leaderboard</h2>
+                                <button
+                                    class="text-sm font-medium text-primary hover:text-primary-dark !rounded-button whitespace-nowrap">View
+                                    All</button>
+                            </div>
+                            <div class="space-y-3">
+                                <!-- Top 1 -->
+                                <div class="flex items-center p-2 bg-yellow-50 rounded-md">
+                                    <div
+                                        class="w-6 h-6 flex items-center justify-center bg-yellow-100 rounded-full text-yellow-700 mr-3 font-medium">
+                                        1</div>
+                                    <div class="flex-1 flex items-center">
+                                        <img class="h-8 w-8 rounded-full object-cover mr-2"
+                                            src="https://readdy.ai/api/search-image?query=professional%20portrait%20photo%20of%20a%20young%20male%20student%20with%20short%20black%20hair%2C%20friendly%20smile%2C%20natural%20look%2C%20wearing%20casual%20smart%20attire%2C%20neutral%20background%2C%20high%20quality%20professional%20headshot&width=200&height=200&seq=avatar2&orientation=squarish"
+                                            alt="User avatar">
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-900">Michael Chen</p>
+                                            <p class="text-xs text-gray-500">12th Grade</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-medium text-gray-900">1,245</p>
+                                        <p class="text-xs text-gray-500">points</p>
+                                    </div>
+                                </div>
+
+                                <!-- Top 2 -->
+                                <div class="flex items-center p-2 bg-gray-50 rounded-md">
+                                    <div
+                                        class="w-6 h-6 flex items-center justify-center bg-gray-200 rounded-full text-gray-700 mr-3 font-medium">
+                                        2</div>
+                                    <div class="flex-1 flex items-center">
+                                        <img class="h-8 w-8 rounded-full object-cover mr-2"
+                                            src="https://readdy.ai/api/search-image?query=professional%20portrait%20photo%20of%20a%20young%20female%20student%20with%20long%20blonde%20hair%2C%20friendly%20smile%2C%20natural%20makeup%2C%20wearing%20casual%20smart%20attire%2C%20neutral%20background%2C%20high%20quality%20professional%20headshot&width=200&height=200&seq=avatar3&orientation=squarish"
+                                            alt="User avatar">
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-900">Sophia Rodriguez</p>
+                                            <p class="text-xs text-gray-500">12th Grade</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-medium text-gray-900">1,180</p>
+                                        <p class="text-xs text-gray-500">points</p>
+                                    </div>
+                                </div>
+
+                                <!-- Current User (3rd) -->
+                                <div
+                                    class="flex items-center p-2 bg-primary bg-opacity-5 border border-primary border-opacity-20 rounded-md">
+                                    <div
+                                        class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 font-medium">
+                                        3</div>
+                                    <div class="flex-1 flex items-center">
+                                        <img class="h-8 w-8 rounded-full object-cover mr-2"
+                                            src="https://readdy.ai/api/search-image?query=professional%20portrait%20photo%20of%20a%20young%20female%20student%20with%20shoulder-length%20brown%20hair%2C%20friendly%20smile%2C%20natural%20makeup%2C%20wearing%20casual%20smart%20attire%2C%20neutral%20background%2C%20high%20quality%20professional%20headshot&width=200&height=200&seq=avatar1&orientation=squarish"
+                                            alt="User avatar">
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-900">Emily Johnson</p>
+                                            <p class="text-xs text-gray-500">12th Grade</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-medium text-gray-900">1,056</p>
+                                        <p class="text-xs text-gray-500">points</p>
+                                    </div>
+                                </div>
+
+                                <!-- Top 4 -->
+                                <div class="flex items-center p-2 bg-gray-50 rounded-md">
+                                    <div
+                                        class="w-6 h-6 flex items-center justify-center bg-gray-200 rounded-full text-gray-700 mr-3 font-medium">
+                                        4</div>
+                                    <div class="flex-1 flex items-center">
+                                        <img class="h-8 w-8 rounded-full object-cover mr-2"
+                                            src="https://readdy.ai/api/search-image?query=professional%20portrait%20photo%20of%20a%20young%20male%20student%20with%20short%20brown%20hair%2C%20glasses%2C%20friendly%20smile%2C%20natural%20look%2C%20wearing%20casual%20smart%20attire%2C%20neutral%20background%2C%20high%20quality%20professional%20headshot&width=200&height=200&seq=avatar4&orientation=squarish"
+                                            alt="User avatar">
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-900">Daniel Thompson</p>
+                                            <p class="text-xs text-gray-500">12th Grade</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-medium text-gray-900">987</p>
+                                        <p class="text-xs text-gray-500">points</p>
+                                    </div>
+                                </div>
+
+                                <!-- Top 5 -->
+                                <div class="flex items-center p-2 bg-gray-50 rounded-md">
+                                    <div
+                                        class="w-6 h-6 flex items-center justify-center bg-gray-200 rounded-full text-gray-700 mr-3 font-medium">
+                                        5</div>
+                                    <div class="flex-1 flex items-center">
+                                        <img class="h-8 w-8 rounded-full object-cover mr-2"
+                                            src="https://readdy.ai/api/search-image?query=professional%20portrait%20photo%20of%20a%20young%20female%20student%20with%20curly%20black%20hair%2C%20friendly%20smile%2C%20natural%20makeup%2C%20wearing%20casual%20smart%20attire%2C%20neutral%20background%2C%20high%20quality%20professional%20headshot&width=200&height=200&seq=avatar5&orientation=squarish"
+                                            alt="User avatar">
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-900">Olivia Williams</p>
+                                            <p class="text-xs text-gray-500">12th Grade</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-medium text-gray-900">925</p>
+                                        <p class="text-xs text-gray-500">points</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- AI Assistant Floating Button -->
+        <div class="fixed bottom-6 right-6 z-50">
+            <button
+                class="w-14 h-14 bg-primary rounded-full shadow-lg flex items-center justify-center text-white hover:bg-primary-dark transition-all !rounded-button">
+                <i class="ri-robot-line ri-lg"></i>
+            </button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Progress Chart
+            const progressChart = echarts.init(document.getElementById('progress-chart'));
+
+            const option = {
+                animation: false,
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    borderColor: '#e5e7eb',
+                    borderWidth: 1,
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                legend: {
+                    data: ['Physics', 'Mathematics', 'Chemistry', 'Literature'],
+                    bottom: 0,
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '3%',
+                    top: '3%',
+                    bottom: '15%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#e5e7eb'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#6b7280'
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            color: '#e5e7eb'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#6b7280'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#f3f4f6'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Physics',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        lineStyle: {
+                            width: 3,
+                            color: 'rgba(87, 181, 231, 1)'
+                        },
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                {
+                                    offset: 0,
+                                    color: 'rgba(87, 181, 231, 0.2)'
+                                },
+                                {
+                                    offset: 1,
+                                    color: 'rgba(87, 181, 231, 0)'
+                                }
+                            ])
+                        },
+                        data: [65, 70, 78, 83, 90, 92, 95]
+                    },
+                    {
+                        name: 'Mathematics',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        lineStyle: {
+                            width: 3,
+                            color: 'rgba(141, 211, 199, 1)'
+                        },
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                {
+                                    offset: 0,
+                                    color: 'rgba(141, 211, 199, 0.2)'
+                                },
+                                {
+                                    offset: 1,
+                                    color: 'rgba(141, 211, 199, 0)'
+                                }
+                            ])
+                        },
+                        data: [50, 55, 60, 68, 75, 82, 85]
+                    },
+                    {
+                        name: 'Chemistry',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        lineStyle: {
+                            width: 3,
+                            color: 'rgba(251, 191, 114, 1)'
+                        },
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                {
+                                    offset: 0,
+                                    color: 'rgba(251, 191, 114, 0.2)'
+                                },
+                                {
+                                    offset: 1,
+                                    color: 'rgba(251, 191, 114, 0)'
+                                }
+                            ])
+                        },
+                        data: [75, 72, 70, 78, 82, 88, 92]
+                    },
+                    {
+                        name: 'Literature',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        lineStyle: {
+                            width: 3,
+                            color: 'rgba(252, 141, 98, 1)'
+                        },
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                {
+                                    offset: 0,
+                                    color: 'rgba(252, 141, 98, 0.2)'
+                                },
+                                {
+                                    offset: 1,
+                                    color: 'rgba(252, 141, 98, 0)'
+                                }
+                            ])
+                        },
+                        data: [40, 45, 48, 50, 55, 60, 65]
+                    }
+                ]
+            };
+
+            progressChart.setOption(option);
+
+            // Handle window resize
+            window.addEventListener('resize', function () {
+                progressChart.resize();
+            });
+
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,277 @@
+# Scholar Sphere Product Requirements Document (PRD)
+
+## 1. Overview
+### 1.1 Product Name
+Scholar Sphere
+
+### 1.2 Purpose
+Scholar Sphere is a web app designed to help students track their academic and extracurricular progress in real-time, compete with peers, access study materials, and stay organized with calendars and reminders. It aims to motivate students through gamification (leaderboards, badges, rewards) and provide personalized study support via an AI assistant.
+
+### 1.3 Target Audience
+- **Primary Users**: High school and college students (ages 14–22) who want to track their study progress, organize their schedules, and compete with classmates.
+- **Secondary Users**: Teachers or parents (optional admin roles) to monitor student progress (future scope, not in initial version).
+- **Demographics**: Global, with a focus on students in English-speaking regions or those comfortable with English-language apps.
+
+### 1.4 Value Proposition
+Scholar Sphere empowers students to:
+- Track real-time progress in subjects and extracurriculars.
+- Stay motivated through class-based leaderboards, badges, and rewards.
+- Access course materials (PDFs, videos, articles) and an AI study assistant.
+- Manage schedules with calendars and reminders in a user-friendly, customizable interface (dark/light mode).
+
+## 2. Goals and Objectives
+- **User Goals**:
+  - Easily track study hours, tasks, and extracurricular activities.
+  - Compete with peers in the same class (e.g., 12th grade) to stay motivated.
+  - Access organized study resources and get instant study help from an AI assistant.
+  - Receive reminders for tasks and events to stay on track.
+- **Business Goals**:
+  - Build a scalable platform with free and premium membership tiers.
+  - Attract 1,000 student users in the first 6 months post-launch.
+  - Establish Scholar Sphere as a go-to study tool for high school students.
+- **Success Metrics**:
+  - User signups and active daily users.
+  - Engagement with progress tracker and leaderboard (e.g., average hours logged per user).
+  - Premium membership conversions (free to paid).
+  - Positive feedback via the feedback form (e.g., 80% satisfaction rate).
+
+## 3. Features and Requirements
+### 3.1 Core Features
+1. **Login/Signup Page**
+   - **Description**: Secure authentication for students to create accounts or log in.
+   - **Requirements**:
+     - Email/password signup with email verification.
+     - Social login (Google) for quick access.
+     - Redirect to membership page after signup.
+     - Forgot password functionality.
+   - **Priority**: High
+
+2. **Membership Page**
+   - **Description**: Offer free and premium plans to differentiate access to features.
+   - **Requirements**:
+     - Free Plan: Basic features (limited course material access, no AI assistant).
+     - Premium Plan: Full access (unlimited course materials, AI assistant).
+     - Display plan benefits clearly with a “Upgrade to Premium” button.
+     - Store membership status in the backend.
+   - **Priority**: High
+
+3. **Student Dashboard**
+   - **Description**: Central hub for students to navigate and view key updates.
+   - **Requirements**:
+     - Quick links to Profile, Progress Tracker, Extracurricular Tracker, Calendar, Leaderboard, Course Materials, and AI Assistant.
+     - Show upcoming reminders and recently earned badges.
+     - Clean, intuitive layout with a sidebar for navigation.
+   - **Priority**: High
+
+4. **Profile Page**
+   - **Description**: Allow students to personalize their account.
+   - **Requirements**:
+     - Edit name, class (e.g., 12th grade), bio, and profile picture.
+     - Upload profile picture to backend storage.
+     - Display class for leaderboard grouping.
+   - **Priority**: Medium
+
+5. **Personal Progress Tracker**
+   - **Description**: Track real-time study progress for each subject/course.
+   - **Requirements**:
+     - Add/edit subjects (e.g., Math, Science).
+     - Log study hours or completed tasks (e.g., “Finished Chapter 3”).
+     - Show progress bars and stats (e.g., “75% complete in Math”).
+     - Real-time updates synced across devices.
+   - **Priority**: High
+
+6. **Extracurricular Tracker**
+   - **Description**: Log and view participation in non-academic activities.
+   - **Requirements**:
+     - Add activities (e.g., “Soccer practice”, “Debate club”) with dates and descriptions.
+     - Display a timeline or list of activities.
+     - Summarize participation (e.g., “5 activities this month”).
+   - **Priority**: Medium
+
+7. **Calendar**
+   - **Description**: Organize study and extracurricular events.
+   - **Requirements**:
+     - Monthly calendar view to add/view events.
+     - Sync with reminders for tasks or activities.
+     - Simple drag-and-drop or form-based event creation.
+   - **Priority**: High
+
+8. **Reminder Notifications**
+   - **Description**: Notify students of upcoming tasks or events.
+   - **Requirements**:
+     - Set reminders via the calendar or manually.
+     - Send in-app notifications and email alerts.
+     - Allow customization (e.g., notify 1 hour before).
+   - **Priority**: High
+
+9. **Dark and Light Mode**
+   - **Description**: Customize the app’s appearance for user comfort.
+   - **Requirements**:
+     - Toggle between dark and light themes.
+     - Save user preference in the backend.
+     - Apply theme consistently across all pages.
+   - **Priority**: Medium
+
+10. **Leaderboard**
+    - **Description**: Rank students based on points earned in their class.
+    - **Requirements**:
+      - Display top 10 students per class (e.g., 12th grade).
+      - Points based on study hours, tasks completed, and badges.
+      - Real-time updates for rankings.
+    - **Priority**: High
+
+11. **Badges and Rewards**
+    - **Description**: Gamify progress to motivate students.
+    - **Requirements**:
+      - Award badges for milestones (e.g., “10 hours studied”, “5 tasks completed”).
+      - Assign points per badge to contribute to leaderboard.
+      - Display badges on the dashboard and profile.
+    - **Priority**: Medium
+
+12. **Class Competition**
+    - **Description**: Group students by class for leaderboard rankings.
+    - **Requirements**:
+      - Allow students to select their class during signup or in profile.
+      - Restrict leaderboard to same-class students (e.g., 12th graders compete only with 12th graders).
+      - Store class data in the backend.
+    - **Priority**: High
+
+13. **Course Materials**
+    - **Description**: Provide access to study resources.
+    - **Requirements**:
+      - Upload and categorize PDFs, videos, and articles by subject (e.g., Math, Science).
+      - Store files in backend storage.
+      - Limit free users (e.g., 5 files/month) and allow unlimited access for premium users.
+      - Display materials in a searchable, organized list.
+    - **Priority**: High
+
+14. **AI Assistant**
+    - **Description**: A chatbot to answer study-related questions.
+    - **Requirements**:
+      - Accessible only to premium users.
+      - Answer questions like “Explain photosynthesis” or “Solve x + 5 = 10”.
+      - Use a simple AI model or external API (to be determined during development).
+      - Display chat history for the session.
+    - **Priority**: Medium
+
+15. **Feedback Form**
+    - **Description**: Collect user feedback to improve the app.
+    - **Requirements**:
+      - Simple form with fields: Name (optional), Feedback (text), Rating (1–5 stars).
+      - Store submissions in the backend.
+      - Thank-you message after submission.
+    - **Priority**: Low
+
+16. **FAQs Page**
+    - **Description**: Answer common user questions.
+    - **Requirements**:
+      - Static page with 5–10 questions (e.g., “How do I upgrade to premium?”, “How are leaderboard points calculated?”).
+      - Collapsible sections for easy reading.
+    - **Priority**: Low
+
+### 3.2 Non-Functional Requirements
+- **Performance**: App loads pages in under 2 seconds on standard internet.
+- **Scalability**: Support up to 10,000 users in the first year.
+- **Security**:
+  - Secure authentication with Supabase Row Level Security (RLS) to protect user data.
+  - Restrict access to course materials and AI assistant based on membership.
+- **Usability**:
+  - Intuitive UI with minimal learning curve for students.
+  - Responsive design for mobile and desktop.
+- **Accessibility**: Follow WCAG 2.1 guidelines (e.g., alt text for images, keyboard navigation).
+
+## 4. User Flow
+1. **Onboarding**:
+   - Student visits the app and sees the login/signup page.
+   - Signs up with email/password or Google, selects class (e.g., 12th grade), and chooses a membership plan.
+   - Redirected to the dashboard.
+
+2. **Dashboard Navigation**:
+   - Views summary (reminders, badges) and navigates to Profile, Progress Tracker, Calendar, etc., via sidebar.
+   - Premium users see an AI Assistant button; free users see an upgrade prompt.
+
+3. **Study Tracking**:
+   - Adds a subject (e.g., Math) in the Progress Tracker.
+   - Logs study hours or tasks, sees real-time progress bars.
+   - Earns badges for milestones, which update the leaderboard.
+
+4. **Resource Access**:
+   - Browses course materials (PDFs, videos) by subject.
+   - Free users hit a limit and are prompted to upgrade; premium users access all files.
+
+5. **Organization**:
+   - Adds events to the Calendar (e.g., “Math exam”).
+   - Sets reminders and receives in-app/email notifications.
+
+6. **Competition**:
+   - Views the leaderboard to see their rank among classmates.
+   - Earns points via progress and badges to climb the leaderboard.
+
+7. **Feedback and Support**:
+   - Submits feedback via the Feedback Form.
+   - Checks the FAQs page for help.
+
+## 5. Technical Requirements
+### 5.1 Tech Stack
+- **Frontend**: React, Tailwind CSS, Vite (generated by Lovable AI).
+- **Backend**: Supabase (authentication, PostgreSQL database, storage, real-time).
+- **AI Assistant**: Simple chatbot API (to be selected during development, e.g., a free model compatible with Supabase).
+- **Hosting**: Deployed via Lovable AI to a live URL (no manual setup).
+
+### 5.2 Supabase Setup
+- **Authentication**: Email/password and Google OAuth.
+- **Database Tables**:
+  - `users`: User ID, email, membership status (free/premium).
+  - `profiles`: Name, class, bio, profile picture URL.
+  - `progress`: User ID, subject, study hours, tasks completed.
+  - `extracurriculars`: User ID, activity name, date, description.
+  - `events`: User ID, event name, date, reminder settings.
+  - `badges`: User ID, badge name, points, date earned.
+  - `leaderboard`: User ID, class, total points.
+  - `materials`: File ID, subject, file type (PDF/video/article), URL.
+  - `feedback`: User ID (optional), feedback text, rating.
+- **Storage**:
+  - Buckets for `profile_pictures` and `course_materials`.
+  - Public read access for materials; restricted write access.
+- **Realtime**: Enable for `progress` and `leaderboard` tables.
+- **Webhooks**: Email notifications for reminders.
+
+### 5.3 Security
+- Supabase Row Level Security (RLS) to ensure users only access their own data.
+- Validate file uploads (e.g., max 50MB, supported formats: PDF, MP4, text).
+- Encrypt sensitive data (e.g., passwords) via Supabase Auth.
+
+## 6. Assumptions and Constraints
+- **Assumptions**:
+  - Students are comfortable with English and have internet access.
+  - Supabase’s free tier is sufficient for initial users (up to ~10,000).
+  - Lovable AI can generate all features without manual coding.
+- **Constraints**:
+  - No coding skills available; reliant on Lovable AI and Supabase’s no-code/low-code interfaces.
+  - Budget limited to free tiers initially (Supabase, Lovable, AI API).
+  - AI assistant may have limited functionality if using a free API.
+
+## 7. Future Scope
+- Admin panel for teachers/parents to monitor student progress.
+- Mobile app version (iOS/Android).
+- Integration with external platforms (e.g., Google Classroom).
+- Advanced AI assistant with subject-specific tutoring (e.g., Math solver).
+
+## 8. Timeline (Estimated)
+- **Week 1**: Set up Lovable AI and Supabase accounts, finalize PRD.
+- **Week 2**: Generate app with Lovable AI using the prompt, configure Supabase.
+- **Week 3**: Test app, fix issues via Lovable’s chat interface.
+- **Week 4**: Upload initial course materials, invite beta testers (e.g., friends).
+- **Week 5–6**: Iterate based on feedback, prepare for launch.
+
+## 9. Open Questions
+- What AI model/API should the AI assistant use? (Lovable may suggest options.)
+- Should the app include a payment gateway for premium plans immediately, or later?
+- Are there specific subjects/courses to prioritize for course materials?
+
+## 10. Visual and Branding Guidelines
+- **Color Scheme**: Blue and white (clean, academic vibe), with accents of green for progress.
+- **Typography**: Modern, sans-serif fonts (e.g., Inter or Roboto).
+- **Tone**: Friendly, motivational, and approachable for students.
+- **Logo**: Simple icon of a book or globe (optional, can be added later).
+- **UI Style**: Minimalist, with clear buttons and progress visualizations (e.g., bars, charts).

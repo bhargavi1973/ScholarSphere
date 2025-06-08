@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Courses | Scholar Sphere</title>
+  <!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+
+<!-- Remix Icon (only include once) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+<!-- Custom Styles -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ECharts Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="main.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .bg-primary {
+      background-color: #4f46e5;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar -->
+        <div class="w-64 bg-white border-r border-gray-200 flex flex-col">
+      <!-- Logo -->
+      <div class="p-4 border-b border-gray-200">
+        <div class="flex items-center">
+          <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white mr-2">
+            <i class="ri-graduation-cap-fill ri-lg"></i>
+          </div>
+          <h1 class="text-xl font-['Pacifico'] text-gray-800">Scholar Sphere</h1>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex-1 overflow-y-auto custom-scrollbar">
+        <div class="px-4 pt-5 pb-2">
+          <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">Main</p>
+        </div>
+        <div class="px-2">
+          <a href="index.html" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100">
+            <div class="w-6 h-6 flex items-center justify-center mr-2">
+              <i class="ri-dashboard-line"></i>
+            </div>
+            <span>Dashboard</span>
+          </a>
+          <a href="mycourses.html" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1">
+            <div class="w-6 h-6 flex items-center justify-center mr-2" >
+              <i class="ri-book-open-line"></i>
+            </div>
+            <span>My Courses</span>
+          </a>
+          <a href="schedule.html" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1" >
+            <div class="w-6 h-6 flex items-center justify-center mr-2">
+              <i class="ri-calendar-line"></i>
+            </div>
+            <span>Schedule</span>
+          </a>
+          <a href="assignments.html" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1" >
+            <div class="w-6 h-6 flex items-center justify-center mr-2">
+              <i class="ri-task-line"></i>
+            </div>
+            <span>Assignments</span>
+          </a>
+          <a href="resources.html" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100" >
+            <div class="w-6 h-6 flex items-center justify-center mr-2">
+              <i class="ri-file-list-3-line"></i>
+            </div>
+            <span>Resources</span>
+          </a>
+        </div>
+
+        <div class="px-4 pt-5 pb-2">
+          <p class="text-xs font-medium text-gray-500 uppercase tracking-wider"> My Progress</p>
+        </div>
+        <div class="px-2">
+          <a href="analytics.html" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1" >
+            <div class="w-6 h-6 flex items-center justify-center mr-2">
+              <i class="ri-line-chart-line"></i>
+            </div>
+            <span>Analytics</span>
+          </a>
+          <a href="achievements.html" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1" >
+            <div class="w-6 h-6 flex items-center justify-center mr-2">
+              <i class="ri-medal-line"></i>
+            </div>
+            <span>Achievements</span>
+          </a>
+          <a href="leaderboard.html" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100">
+            <div class="w-6 h-6 flex items-center justify-center mr-2">
+              <i class="ri-trophy-line"></i>
+            </div>
+            <span>Leaderboard</span>
+          </a>
+        </div>
+
+        <div class="px-4 pt-5 pb-2">
+          <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">Account</p>
+        </div>
+        <div class="px-2">
+          <a href="profile.html" class="flex items-center px-3 py-2 text-sm font-medium rounded-md bg-primary text-white mt-1">
+            <div class="w-6 h-6 flex items-center justify-center mr-2">
+              <i class="ri-user-settings-line"></i>
+            </div>
+            <span>Profile</span>
+          </a>
+          
+          <a href="support.html" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 mt-1">
+            <div class="w-6 h-6 flex items-center justify-center mr-2">
+              <i class="ri-customer-service-2-line"></i>
+            </div>
+            <span>Support</span>
+          </a>
+        </div>
+      </nav>
+      <!-- Membership Status -->
+            <div class="p-4 border-t border-gray-200">
+                <div class="bg-gray-50 rounded-lg p-3">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-medium text-gray-700">Basic Plan</span>
+                        <span class="text-xs font-medium px-2 py-1 bg-blue-100 text-blue-800 rounded-full">Active</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5">
+                        <div class="bg-primary h-1.5 rounded-full" style="width: 45%"></div>
+                    </div>
+                    <div class="mt-2 flex justify-between items-center">
+                        <span class="text-xs text-gray-500">45 days left</span>
+                        <button class="text-xs font-medium text-primary hover:text-primary-dark !rounded-button">Upgrade</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content -->
+</body>
+</html>
